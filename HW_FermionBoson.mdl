@@ -1,0 +1,14 @@
+model FermionBoson/1.
+
+parameter g = 0:'Coupling Constant'.
+
+spinor f1/F1:(Fermion, mass mf = 0).
+vector A/A:(Boson, mass mb = 0).
+
+let F^mu^nu = deriv^mu*A^nu-deriv^nu*A^mu.
+
+let LA = -1/4*(F^mu^nu)**2 + (1/2)*(mb**2)*(A^mu)**2.
+let LD = F1*(i*gamma*deriv-mf)*f1.
+let Lint = -g*F1*gamma*A*f1.
+
+lterm LA + LD + Lint.

@@ -1,0 +1,14 @@
+model BosonScalar/1.
+
+parameter g = 0:'Coupling Constant'.
+
+scalar h:(Scalar, mass mh = 0).
+vector A/A:(Boson, mass mb = 0).
+
+let F^mu^nu = deriv^mu*A^nu-deriv^nu*A^mu.
+
+let LA = -1/4*(F^mu^nu)**2 + (1/2)*(mb**2)*(A^mu)**2.
+let LKG = (1/2)*(deriv^mu*h)*(deriv^mu*h) - (1/2)*(mh**2)*h**2.
+let Lint = (1/2)*mb*g*A^mu*delta(vector)^mu^nu*A^nu*h.
+
+lterm LA + LKG + Lint.

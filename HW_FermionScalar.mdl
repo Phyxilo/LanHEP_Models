@@ -1,0 +1,12 @@
+model FermionScalar/1.
+
+parameter g = 0:'Coupling Constant'.
+
+spinor f1/F1:(Fermion, mass mf = 0).
+scalar h:(Scalar, mass mh = 0).
+
+let LKG = (1/2)*(deriv^mu*h)*(deriv^mu*h) - (1/2)*(mh**2)*h**2.
+let LD = F1*(i*gamma*deriv-mf)*f1.
+let Lint = -(mf/mh)*g*F1*f1*h.
+
+lterm LKG + LD + Lint.

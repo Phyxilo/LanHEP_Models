@@ -1,0 +1,11 @@
+model Boson/1.
+
+vector A/A:(Boson).
+parameter mb.
+
+let F^mu^nu = deriv^mu*A^nu-deriv^nu*A^mu.
+
+lterm (-1/4)*(F^mu^nu)**2.
+lterm +(1/2)*(mb**2)*(A^mu)**2.
+
+CheckMasses.

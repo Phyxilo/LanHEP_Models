@@ -1,0 +1,9 @@
+model Scalar/1.
+
+scalar h.
+parameter mh.
+
+lterm (1/2)*(deriv^mu*h)*(deriv^mu*h).
+lterm -(1/2)*(mh**2)*h.
+
+CheckMasses.

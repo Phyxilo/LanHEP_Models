@@ -1,0 +1,9 @@
+model Fermion/1.
+
+spinor f/F:(Fermion).
+parameter mf.
+
+lterm i*F*gamma^mu*deriv^mu*f.
+lterm -mf*F*f.
+
+CheckMasses.
